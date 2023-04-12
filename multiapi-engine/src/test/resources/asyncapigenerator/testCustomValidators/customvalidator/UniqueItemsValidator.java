@@ -1,4 +1,4 @@
-package com.sngular.scsplugin.customvalidator.model.event.customvalidator;
+package com.sngular.scsplugin.customvalidator.model.event.schemas.customvalidator;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class UniqueItemsValidator implements ConstraintValidator<UniqueItems, List<?>> {
 

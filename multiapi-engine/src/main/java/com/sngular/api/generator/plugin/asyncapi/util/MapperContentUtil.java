@@ -14,6 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Queue;
 import java.util.Set;
@@ -26,6 +27,8 @@ import com.sngular.api.generator.plugin.asyncapi.model.SchemaFieldObject;
 import com.sngular.api.generator.plugin.asyncapi.model.SchemaFieldObjectProperties;
 import com.sngular.api.generator.plugin.asyncapi.model.SchemaObject;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MapperContentUtil {
 
@@ -50,6 +53,8 @@ public class MapperContentUtil {
 
   private static String schemaCombinatorType;
 
+  private static final Logger log = LoggerFactory.getLogger(MapperContentUtil.class);
+
   private MapperContentUtil() {}
 
   public static List<SchemaObject> mapComponentToSchemaObject(
@@ -65,7 +70,11 @@ public class MapperContentUtil {
         final var nexElement = buildSchemaObject(totalSchemas, modelToBuild, totalSchemas.get((path[path.length - 2] + "/" + path[path.length - 1]).toUpperCase()),
                                                  prefix, suffix, modelToBuildList, path.length >= 2 ? path[path.length - 2] : "");
         if (schemasList.contains(nexElement)) {
-          modelToBuildList.remove();
+          try {
+            modelToBuildList.remove();
+          } catch (NoSuchElementException e) {
+            log.error("ASYNCAPIGEN could not remove element from modelToBuildList (empty) for element: {}, totalSchemas={}", nexElement, totalSchemas, e);
+          }
         } else {
           schemasList.add(nexElement);
         }

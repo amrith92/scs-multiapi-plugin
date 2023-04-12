@@ -2,8 +2,8 @@ package ${packageModel}.customvalidator;
 
 import java.util.Objects;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class PatternValidator implements ConstraintValidator<Pattern, String> {
 

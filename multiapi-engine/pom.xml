@@ -4,8 +4,20 @@
 
   <groupId>com.sngular</groupId>
   <artifactId>multiapi-engine</artifactId>
-  <version>4.5.2</version>
+  <version>4.5.2-fkj17.3</version>
   <packaging>jar</packaging>
+  <distributionManagement>
+    <repository>
+      <id>fk-jfrog-release</id>
+      <name>libs-rel</name>
+      <url>https://jfrog.fkinternal.com/artifactory/maven_virtual</url>
+    </repository>
+    <snapshotRepository>
+      <id>fk-jfrog-snapshot</id>
+      <name>libs-snapshot</name>
+      <url>https://jfrog.fkinternal.com/artifactory/maven_virtual</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <properties>
     <maven.compiler.source>11</maven.compiler.source>

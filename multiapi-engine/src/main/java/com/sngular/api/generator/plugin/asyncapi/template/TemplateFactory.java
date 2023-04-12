@@ -183,7 +183,7 @@ public class TemplateFactory {
       final String fileNameValidator, final String templateValidator) throws TemplateException, IOException {
     final Path pathToCustomValidatorPackage = filePathToSave.resolve("customvalidator");
     pathToCustomValidatorPackage.toFile().mkdirs();
-    root.put("packageModel", modelPackage);
+    root.put("packageModel", modelPackage + ".schemas");
     final String pathToSaveAnnotationClass = pathToCustomValidatorPackage.resolve(fileNameAnnotation).toString();
     writeTemplateToFile(templateAnnotation, root, pathToSaveAnnotationClass);
     final String pathToSaveValidatorClass = pathToCustomValidatorPackage.resolve(fileNameValidator).toString();

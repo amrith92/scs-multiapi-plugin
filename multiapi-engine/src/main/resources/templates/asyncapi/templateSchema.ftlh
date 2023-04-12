@@ -17,61 +17,61 @@ import ${import};
 </#list>
 <#list schema.fieldObjectList as field>
     <#if field.restrictions.maxLength?has_content || field.restrictions.minLength?has_content>
-import ${packageModel}.customvalidator.Size;
+import ${packageModel}.${schema.parentPackage}.customvalidator.Size;
         <#break>
     </#if>
 </#list>
 <#list schema.fieldObjectList as field>
     <#if field.restrictions.maximum?has_content>
-import ${packageModel}.customvalidator.Max;
+import ${packageModel}.${schema.parentPackage}.customvalidator.Max;
         <#break>
     </#if>
 </#list>
 <#list schema.fieldObjectList as field>
     <#if field.restrictions.minimum?has_content>
-import ${packageModel}.customvalidator.Min;
+import ${packageModel}.${schema.parentPackage}.customvalidator.Min;
         <#break>
     </#if>
 </#list>
 <#list schema.fieldObjectList as field>
     <#if field.restrictions.maxItems?has_content>
-import ${packageModel}.customvalidator.MaxItems;
+import ${packageModel}.${schema.parentPackage}.customvalidator.MaxItems;
         <#break>
     </#if>
 </#list>
 <#list schema.fieldObjectList as field>
     <#if field.restrictions.minItems?has_content>
-import ${packageModel}.customvalidator.MinItems;
+import ${packageModel}.${schema.parentPackage}.customvalidator.MinItems;
         <#break>
     </#if>
 </#list>
 <#list schema.fieldObjectList as field>
     <#if field.required || schema.schemaCombinator == "anyOf" || schema.schemaCombinator == "oneOf">
-import ${packageModel}.exception.ModelClassException;
+import ${packageModel}.${schema.parentPackage}.exception.ModelClassException;
         <#break>
     </#if>
 </#list>
 <#list schema.fieldObjectList as field>
     <#if field.restrictions.pattern?has_content>
-import ${packageModel}.customvalidator.Pattern;
+import ${packageModel}.${schema.parentPackage}.customvalidator.Pattern;
         <#break>
     </#if>
 </#list>
 <#list schema.fieldObjectList as field>
     <#if field.restrictions.multipleOf?has_content>
-import ${packageModel}.customvalidator.MultipleOf;
+import ${packageModel}.${schema.parentPackage}.customvalidator.MultipleOf;
         <#break>
     </#if>
 </#list>
 <#list schema.fieldObjectList as field>
     <#if field.required?has_content && field.required == true>
-import ${packageModel}.customvalidator.NotNull;
+import ${packageModel}.${schema.parentPackage}.customvalidator.NotNull;
         <#break>
     </#if>
 </#list>
 <#list schema.fieldObjectList as field>
     <#if field.restrictions.uniqueItems?has_content && field.restrictions.uniqueItems == true>
-import ${packageModel}.customvalidator.UniqueItems;
+import ${packageModel}.${schema.parentPackage}.customvalidator.UniqueItems;
         <#break>
     </#if>
 </#list>

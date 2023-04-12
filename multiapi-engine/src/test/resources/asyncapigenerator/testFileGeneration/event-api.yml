@@ -31,3 +31,9 @@ channels:
       message:
         payload:
           $ref: './assets/path.yml#/components/schemas/CreateOrder'
+  invocation/event:
+    subscribe:
+      summary: schema of the event to be subscribed for
+      operationId: processInvocationEvent
+      message:
+        $ref: './assets/path.yml#/components/messages/InvocationEvent'

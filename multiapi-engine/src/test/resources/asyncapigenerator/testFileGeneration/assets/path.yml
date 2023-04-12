@@ -3,7 +3,73 @@ components:
     OrderCreated:
       payload:
         $ref: '#/components/schemas/Order'
+    InvocationEvent:
+      name: InvocationEvent
+      title: API Invocation event payload
+      payload:
+        $ref: '#/components/schemas/Payload'
   schemas:
+    HeaderItem:
+      type: object
+      properties:
+        Key:
+          type: string
+        Value:
+          type: string
+      required:
+        - Key
+        - Value
+    Payload:
+      type: object
+      properties:
+        timeStamp:
+          type: string
+        invokerId:
+          type: string
+        invokerName:
+          type: string
+        clientId:
+          type: string
+        clientName:
+          type: string
+        clientDescription:
+          type: string
+        clientType:
+          type: string
+        sellerId:
+          type: string
+        scope:
+          type: string
+        method:
+          type: string
+        serviceName:
+          type: string
+        requestUri:
+          type: string
+        ipAddress:
+          type: string
+        traceId:
+          type: string
+        responseCode:
+          type: string
+        protocol:
+          type: string
+        responseSize:
+          type: string
+        requestPayload:
+          type: string
+        requestHeaders:
+          type: array
+          items:
+            $ref: '#/components/schemas/HeaderItem'
+        responseHeaders:
+          type: array
+          items:
+            $ref: '#/components/schemas/HeaderItem'
+        response:
+          type: string
+        latency:
+          type: string
     CreateOrder:
       order:
         $ref: '#/components/schemas/Order'

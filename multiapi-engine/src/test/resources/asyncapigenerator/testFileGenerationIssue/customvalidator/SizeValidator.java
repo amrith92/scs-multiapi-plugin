@@ -1,9 +1,9 @@
-package com.sngular.scsplugin.filegenerationissue.model.event.customvalidator;
+package com.sngular.scsplugin.filegenerationissue.model.event.schemas.customvalidator;
 
 import java.util.Objects;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class SizeValidator implements ConstraintValidator<Size, String> {
 

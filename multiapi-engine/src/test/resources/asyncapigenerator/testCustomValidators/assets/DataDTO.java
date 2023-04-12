@@ -8,16 +8,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.List;
 import java.util.ArrayList;
-import com.sngular.scsplugin.customvalidator.model.event.customvalidator.Size;
-import com.sngular.scsplugin.customvalidator.model.event.customvalidator.Max;
-import com.sngular.scsplugin.customvalidator.model.event.customvalidator.Min;
-import com.sngular.scsplugin.customvalidator.model.event.customvalidator.MaxItems;
-import com.sngular.scsplugin.customvalidator.model.event.customvalidator.MinItems;
-import com.sngular.scsplugin.customvalidator.model.event.exception.ModelClassException;
-import com.sngular.scsplugin.customvalidator.model.event.customvalidator.Pattern;
-import com.sngular.scsplugin.customvalidator.model.event.customvalidator.MultipleOf;
-import com.sngular.scsplugin.customvalidator.model.event.customvalidator.NotNull;
-import com.sngular.scsplugin.customvalidator.model.event.customvalidator.UniqueItems;
+import com.sngular.scsplugin.customvalidator.model.event.schemas.customvalidator.Size;
+import com.sngular.scsplugin.customvalidator.model.event.schemas.customvalidator.Max;
+import com.sngular.scsplugin.customvalidator.model.event.schemas.customvalidator.Min;
+import com.sngular.scsplugin.customvalidator.model.event.schemas.customvalidator.MaxItems;
+import com.sngular.scsplugin.customvalidator.model.event.schemas.customvalidator.MinItems;
+import com.sngular.scsplugin.customvalidator.model.event.schemas.exception.ModelClassException;
+import com.sngular.scsplugin.customvalidator.model.event.schemas.customvalidator.Pattern;
+import com.sngular.scsplugin.customvalidator.model.event.schemas.customvalidator.MultipleOf;
+import com.sngular.scsplugin.customvalidator.model.event.schemas.customvalidator.NotNull;
+import com.sngular.scsplugin.customvalidator.model.event.schemas.customvalidator.UniqueItems;
 
 @JsonDeserialize(builder = DataDTO.DataDTOBuilder.class)
 public class DataDTO {

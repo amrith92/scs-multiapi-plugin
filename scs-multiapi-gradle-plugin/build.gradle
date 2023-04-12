@@ -17,10 +17,13 @@ repositories {
   mavenLocal()
   mavenCentral()
   maven { url 'https://jitpack.io' }
+  maven {
+    url 'https://jfrog.fkinternal.com/artifactory/gradle_virtual'
+  }
 }
 
 group = 'com.sngular'
-version = '4.5.2'
+version = '4.5.2-fkj17.3'
 
 def SCSMultiApiPluginGroupId = group
 def SCSMultiApiPluginVersion = version
@@ -30,9 +33,10 @@ dependencies {
   shadow localGroovy()
   shadow gradleApi()
 
-  implementation 'com.sngular:multiapi-engine:4.5.2'
+  implementation 'com.sngular:multiapi-engine:4.5.2-fkj17.3'
   testImplementation 'org.assertj:assertj-core:3.23.1'
   testImplementation 'com.puppycrawl.tools:checkstyle:10.3.1'
+  testImplementation(platform('org.junit:junit-bom:5.8.2'))
 }
 
 jar {
@@ -98,7 +102,7 @@ testing {
 
     integrationTest(JvmTestSuite) {
       dependencies {
-        implementation 'com.sngular:scs-multiapi-gradle-plugin:4.5.2'
+        implementation 'com.sngular:scs-multiapi-gradle-plugin:4.5.2-fkj17.3'
         implementation 'org.assertj:assertj-core:3.23.1'
       }
 
@@ -164,6 +168,10 @@ publishing {
     maven {
       name = 'localPluginRepository'
       url = '../local-plugin-repository'
+    }
+    maven {
+      name = 'fkJfrog'
+      url = "https://jfrog.fkinternal.com/artifactory/gradle_virtual/libs-${project.version.endsWith('-SNAPSHOT') ? 'snapshots' : 'release' }-local"
     }
   }
 }
